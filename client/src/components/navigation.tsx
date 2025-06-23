@@ -35,6 +35,8 @@ export default function Navigation() {
         const rect = aboutSection.getBoundingClientRect();
         const isAboutVisible = rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
         setActiveSection(isAboutVisible ? "about" : "home");
+      } else {
+        setActiveSection("home");
       }
     };
 
