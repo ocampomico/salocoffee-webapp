@@ -12,7 +12,7 @@ import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
-    <div className="min-h-screen bg-warm-white">
+    <div className="min-h-screen bg-background">
       <Navigation />
       <Switch>
         <Route path="/" component={Home} />

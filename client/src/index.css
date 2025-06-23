@@ -3,34 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(47, 89%, 97%);
-  --foreground: hsl(20, 45%, 15%);
-  --muted: hsl(47, 30%, 93%);
-  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(222.2, 84%, 4.9%);
+  --muted: hsl(210, 40%, 98%);
+  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
   --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(20, 45%, 15%);
+  --popover-foreground: hsl(222.2, 84%, 4.9%);
   --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(20, 45%, 15%);
-  --border: hsl(47, 30%, 85%);
-  --input: hsl(47, 30%, 85%);
-  --primary: hsl(25, 63%, 40%);
-  --primary-foreground: hsl(47, 89%, 97%);
-  --secondary: hsl(47, 30%, 93%);
-  --secondary-foreground: hsl(25, 25%, 20%);
-  --accent: hsl(28, 68%, 63%);
-  --accent-foreground: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222.2, 84%, 4.9%);
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --input: hsl(214.3, 31.8%, 91.4%);
+  --primary: hsl(27, 87%, 67%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(222.2, 47.4%, 11.2%);
   --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(25, 63%, 40%);
-  --radius: 0.5rem;
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(27, 87%, 67%);
+  --radius: 0.75rem;
   
-  /* Coffee theme colors */
-  --coffee-brown: hsl(25, 63%, 40%);
-  --caramel: hsl(28, 68%, 63%);
-  --sandy-brown: hsl(39, 77%, 63%);
-  --cream: hsl(47, 89%, 89%);
-  --espresso: hsl(20, 45%, 15%);
-  --warm-white: hsl(47, 89%, 97%);
+  /* Modern coffee theme colors */
+  --coffee-primary: hsl(27, 87%, 67%);
+  --coffee-secondary: hsl(35, 91%, 65%);
+  --coffee-dark: hsl(25, 47%, 35%);
+  --coffee-light: hsl(35, 77%, 92%);
+  --coffee-accent: hsl(20, 79%, 88%);
+  --neutral-50: hsl(210, 40%, 98%);
+  --neutral-100: hsl(210, 40%, 96%);
+  --neutral-200: hsl(214.3, 31.8%, 91.4%);
+  --neutral-300: hsl(213, 27%, 84%);
+  --neutral-400: hsl(215.4, 16.3%, 46.9%);
+  --neutral-500: hsl(220, 8.9%, 46.1%);
+  --neutral-600: hsl(215, 13.8%, 34.1%);
+  --neutral-700: hsl(217, 19.1%, 26.7%);
+  --neutral-800: hsl(215, 27.9%, 16.9%);
+  --neutral-900: hsl(222.2, 47.4%, 11.2%);
 }
 
 .dark {
@@ -62,59 +71,85 @@
   }
 
   body {
-    @apply font-sans antialiased;
-    background: var(--warm-white);
-    color: var(--espresso);
+    @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+    letter-spacing: -0.011em;
   }
 }
 
 @layer utilities {
-  .coffee-brown {
-    color: var(--coffee-brown);
+  .coffee-primary {
+    color: var(--coffee-primary);
   }
   
-  .bg-coffee-brown {
-    background-color: var(--coffee-brown);
+  .bg-coffee-primary {
+    background-color: var(--coffee-primary);
   }
   
-  .caramel {
-    color: var(--caramel);
+  .coffee-secondary {
+    color: var(--coffee-secondary);
   }
   
-  .bg-caramel {
-    background-color: var(--caramel);
+  .bg-coffee-secondary {
+    background-color: var(--coffee-secondary);
   }
   
-  .sandy-brown {
-    color: var(--sandy-brown);
+  .coffee-dark {
+    color: var(--coffee-dark);
   }
   
-  .bg-sandy-brown {
-    background-color: var(--sandy-brown);
+  .bg-coffee-dark {
+    background-color: var(--coffee-dark);
   }
   
-  .cream {
-    color: var(--cream);
+  .coffee-light {
+    color: var(--coffee-light);
   }
   
-  .bg-cream {
-    background-color: var(--cream);
+  .bg-coffee-light {
+    background-color: var(--coffee-light);
   }
   
-  .espresso {
-    color: var(--espresso);
+  .coffee-accent {
+    color: var(--coffee-accent);
   }
   
-  .bg-espresso {
-    background-color: var(--espresso);
+  .bg-coffee-accent {
+    background-color: var(--coffee-accent);
   }
-  
-  .warm-white {
-    color: var(--warm-white);
+
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
-  
-  .bg-warm-white {
-    background-color: var(--warm-white);
+
+  .gradient-primary {
+    background: linear-gradient(135deg, var(--coffee-primary), var(--coffee-secondary));
+  }
+
+  .gradient-dark {
+    background: linear-gradient(135deg, var(--coffee-dark), var(--neutral-800));
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--coffee-primary), var(--coffee-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-modern {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .shadow-modern-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-modern-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 }

@@ -62,51 +62,51 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-cream to-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold text-coffee-brown mb-4">Get In Touch</h1>
-            <p className="text-lg text-gray-600">
+    <section className="py-20 bg-neutral-50">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-6xl font-bold text-gradient mb-6">Get In Touch</h1>
+            <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
               Ready for your next great cup? Here's how to find us and get in contact.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div className="space-y-8">
-              <Card>
-                <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold text-coffee-brown mb-6">Contact Information</h2>
+              <Card className="bg-white border-0 shadow-modern-lg">
+                <CardContent className="p-8">
+                  <h2 className="text-2xl font-bold text-neutral-800 mb-8">Contact Information</h2>
                   
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="bg-coffee-brown w-10 h-10 rounded-full flex items-center justify-center">
-                        <Phone className="text-white" size={20} />
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="bg-coffee-primary w-14 h-14 rounded-2xl flex items-center justify-center shadow-modern">
+                        <Phone className="text-white" size={24} />
                       </div>
                       <div>
-                        <div className="font-medium text-espresso">(555) 123-BREW</div>
-                        <div className="text-sm text-gray-600">Call or text for our location</div>
+                        <div className="font-bold text-neutral-800 text-lg">(555) 123-BREW</div>
+                        <div className="text-neutral-600">Call or text for our location</div>
                       </div>
                     </div>
                     
-                    <div className="flex items-center space-x-3">
-                      <div className="bg-caramel w-10 h-10 rounded-full flex items-center justify-center">
-                        <Mail className="text-white" size={20} />
+                    <div className="flex items-center space-x-4">
+                      <div className="bg-coffee-secondary w-14 h-14 rounded-2xl flex items-center justify-center shadow-modern">
+                        <Mail className="text-white" size={24} />
                       </div>
                       <div>
-                        <div className="font-medium text-espresso">hello@brewandgo.com</div>
-                        <div className="text-sm text-gray-600">Orders and inquiries</div>
+                        <div className="font-bold text-neutral-800 text-lg">hello@brewandgo.com</div>
+                        <div className="text-neutral-600">Orders and inquiries</div>
                       </div>
                     </div>
                     
-                    <div className="flex items-center space-x-3">
-                      <div className="bg-sandy-brown w-10 h-10 rounded-full flex items-center justify-center">
-                        <Instagram className="text-white" size={20} />
+                    <div className="flex items-center space-x-4">
+                      <div className="bg-coffee-dark w-14 h-14 rounded-2xl flex items-center justify-center shadow-modern">
+                        <Instagram className="text-white" size={24} />
                       </div>
                       <div>
-                        <div className="font-medium text-espresso">@brewandgo_coffee</div>
-                        <div className="text-sm text-gray-600">Follow for daily locations</div>
+                        <div className="font-bold text-neutral-800 text-lg">@brewandgo_coffee</div>
+                        <div className="text-neutral-600">Follow for daily locations</div>
                       </div>
                     </div>
                   </div>
@@ -114,14 +114,14 @@ export default function Contact() {
               </Card>
               
               {/* Business Hours */}
-              <Card>
-                <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold text-coffee-brown mb-4">Operating Hours</h2>
-                  <div className="space-y-2">
+              <Card className="bg-white border-0 shadow-modern-lg">
+                <CardContent className="p-8">
+                  <h2 className="text-2xl font-bold text-neutral-800 mb-6">Operating Hours</h2>
+                  <div className="space-y-4">
                     {businessHours.map((schedule) => (
-                      <div key={schedule.days} className="flex justify-between">
-                        <span className="text-gray-600">{schedule.days}</span>
-                        <span className="font-medium">{schedule.hours}</span>
+                      <div key={schedule.days} className="flex justify-between items-center py-2">
+                        <span className="text-neutral-600 font-medium">{schedule.days}</span>
+                        <span className="font-bold text-neutral-800">{schedule.hours}</span>
                       </div>
                     ))}
                   </div>
@@ -132,13 +132,13 @@ export default function Contact() {
             {/* Contact Form and Location */}
             <div className="space-y-8">
               {/* Quick Message Form */}
-              <Card>
-                <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold text-coffee-brown mb-4">Send Us a Message</h2>
+              <Card className="bg-white border-0 shadow-modern-lg">
+                <CardContent className="p-8">
+                  <h2 className="text-2xl font-bold text-neutral-800 mb-6">Send Us a Message</h2>
                   <form onSubmit={handleSubmit}>
-                    <div className="space-y-4">
+                    <div className="space-y-6">
                       <div>
-                        <Label htmlFor="name" className="text-sm font-medium text-gray-700">
+                        <Label htmlFor="name" className="text-sm font-semibold text-neutral-700 mb-2 block">
                           Your Name
                         </Label>
                         <Input
@@ -149,12 +149,12 @@ export default function Contact() {
                           value={formData.name}
                           onChange={handleInputChange}
                           required
-                          className="mt-1"
+                          className="h-12 rounded-xl border-neutral-200 focus:border-coffee-primary"
                         />
                       </div>
                       
                       <div>
-                        <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                        <Label htmlFor="email" className="text-sm font-semibold text-neutral-700 mb-2 block">
                           Email
                         </Label>
                         <Input
@@ -165,12 +165,12 @@ export default function Contact() {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="mt-1"
+                          className="h-12 rounded-xl border-neutral-200 focus:border-coffee-primary"
                         />
                       </div>
                       
                       <div>
-                        <Label htmlFor="message" className="text-sm font-medium text-gray-700">
+                        <Label htmlFor="message" className="text-sm font-semibold text-neutral-700 mb-2 block">
                           Message
                         </Label>
                         <Textarea
@@ -180,12 +180,12 @@ export default function Contact() {
                           value={formData.message}
                           onChange={handleInputChange}
                           required
-                          className="mt-1 h-24 resize-none"
+                          className="h-32 resize-none rounded-xl border-neutral-200 focus:border-coffee-primary"
                         />
                       </div>
                       
-                      <Button type="submit" className="w-full bg-coffee-brown hover:bg-coffee-brown/90">
-                        <Send className="mr-2 h-4 w-4" />
+                      <Button type="submit" className="w-full h-12 bg-coffee-primary hover:bg-coffee-primary/90 rounded-xl font-semibold text-lg shadow-modern-lg hover:shadow-modern-xl transition-all">
+                        <Send className="mr-3 h-5 w-5" />
                         Send Message
                       </Button>
                     </div>
@@ -194,28 +194,25 @@ export default function Contact() {
               </Card>
               
               {/* Current Location */}
-              <Card>
-                <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold text-coffee-brown mb-4">Find Us Today</h2>
-                  <div className="space-y-4">
-                    <div className="bg-gradient-to-r from-coffee-brown to-caramel text-white p-4 rounded-lg">
-                      <div className="flex items-center space-x-3 mb-2">
-                        <MapPin className="text-xl" />
-                        <span className="font-semibold">Current Location</span>
-                      </div>
-                      <div>Downtown Plaza<br />123 Main Street</div>
-                      <div className="text-sm opacity-90 mt-2">Today: 7:00 AM - 3:00 PM</div>
+              <Card className="bg-white border-0 shadow-modern-lg overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="gradient-primary text-white p-8">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <MapPin className="text-2xl" />
+                      <span className="font-bold text-xl">Current Location</span>
                     </div>
-                    
-                    <div className="text-center">
-                      <Button
-                        onClick={handleGetDirections}
-                        className="bg-sandy-brown hover:bg-sandy-brown/90 text-white px-6 py-2 rounded-full font-medium"
-                      >
-                        <Navigation className="mr-2 h-4 w-4" />
-                        Get Directions
-                      </Button>
-                    </div>
+                    <div className="text-lg mb-2">Downtown Plaza<br />123 Main Street</div>
+                    <div className="text-sm opacity-90">Today: 7:00 AM - 3:00 PM</div>
+                  </div>
+                  
+                  <div className="p-8">
+                    <Button
+                      onClick={handleGetDirections}
+                      className="w-full h-12 bg-coffee-dark hover:bg-coffee-dark/90 text-white rounded-xl font-semibold text-lg shadow-modern-lg"
+                    >
+                      <Navigation className="mr-3 h-5 w-5" />
+                      Get Directions
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -223,18 +220,18 @@ export default function Contact() {
           </div>
           
           {/* Upcoming Locations */}
-          <div className="mt-12">
-            <Card>
-              <CardContent className="p-6">
-                <h2 className="text-xl font-semibold text-coffee-brown mb-6 text-center">
+          <div className="mt-16">
+            <Card className="bg-white border-0 shadow-modern-lg">
+              <CardContent className="p-12">
+                <h2 className="text-3xl font-bold text-gradient mb-12 text-center">
                   This Week's Schedule
                 </h2>
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="grid md:grid-cols-3 gap-8">
                   {weeklySchedule.map((schedule) => (
-                    <div key={schedule.day} className="text-center p-4 bg-cream rounded-lg">
-                      <div className="font-semibold text-coffee-brown">{schedule.day}</div>
-                      <div className="text-sm text-gray-600 mt-1">{schedule.location}</div>
-                      <div className="text-xs text-gray-500">{schedule.hours}</div>
+                    <div key={schedule.day} className="text-center p-6 bg-coffee-light rounded-2xl shadow-modern hover:shadow-modern-lg transition-shadow">
+                      <div className="font-bold text-coffee-dark text-xl mb-2">{schedule.day}</div>
+                      <div className="text-neutral-600 font-medium mb-1">{schedule.location}</div>
+                      <div className="text-sm text-neutral-500">{schedule.hours}</div>
                     </div>
                   ))}
                 </div>

@@ -22,27 +22,32 @@ export default function Navigation() {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <nav className="container mx-auto px-4 py-4">
+    <header className="bg-white/80 backdrop-blur-xl border-b border-neutral-200 sticky top-0 z-50 shadow-modern">
+      <nav className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
-            <Coffee className="text-coffee-brown text-2xl" />
-            <span className="text-xl font-bold text-coffee-brown">Brew & Go</span>
+          <Link href="/" className="flex items-center space-x-3" onClick={closeMobileMenu}>
+            <div className="bg-coffee-primary p-2 rounded-xl shadow-modern">
+              <Coffee className="text-white text-xl" />
+            </div>
+            <span className="text-2xl font-bold text-gradient">Brew & Go</span>
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
-                className={`font-medium transition-colors ${
+                className={`font-medium transition-all duration-200 relative ${
                   location === item.path
-                    ? "text-coffee-brown font-bold"
-                    : "text-espresso hover:text-coffee-brown"
+                    ? "text-coffee-primary font-semibold"
+                    : "text-neutral-600 hover:text-coffee-primary"
                 }`}
               >
                 {item.label}
+                {location === item.path && (
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-coffee-primary rounded-full" />
+                )}
               </Link>
             ))}
           </div>
@@ -51,7 +56,7 @@ export default function Navigation() {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden text-coffee-brown"
+            className="md:hidden text-coffee-primary hover:bg-coffee-light"
             onClick={toggleMobileMenu}
           >
             {isMobileMenuOpen ? <X className="text-xl" /> : <Menu className="text-xl" />}
@@ -60,16 +65,16 @@ export default function Navigation() {
         
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-cream">
-            <div className="flex flex-col space-y-3 pt-4">
+          <div className="md:hidden mt-6 pb-4 border-t border-neutral-200">
+            <div className="flex flex-col space-y-4 pt-6">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   href={item.path}
-                  className={`font-medium transition-colors ${
+                  className={`font-medium transition-all duration-200 px-3 py-2 rounded-lg ${
                     location === item.path
-                      ? "text-coffee-brown font-bold"
-                      : "text-espresso hover:text-coffee-brown"
+                      ? "text-coffee-primary bg-coffee-light font-semibold"
+                      : "text-neutral-600 hover:text-coffee-primary hover:bg-coffee-light/50"
                   }`}
                   onClick={closeMobileMenu}
                 >
