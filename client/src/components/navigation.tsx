@@ -21,6 +21,22 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
+  const handleAboutClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    closeMobileMenu();
+    
+    // If we're not on the home page, navigate to it first
+    if (location !== "/" && location !== "/about") {
+      window.location.href = "/#about";
+    } else {
+      // Scroll to about section
+      const aboutSection = document.getElementById("about");
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <header className="bg-white/80 backdrop-blur-xl border-b border-neutral-200 sticky top-0 z-50 shadow-modern">
       <nav className="container mx-auto px-6 py-4">
@@ -34,22 +50,42 @@ export default function Navigation() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
-                className={`font-medium transition-all duration-200 relative ${
-                  location === item.path
-                    ? "text-coffee-primary font-semibold"
-                    : "text-neutral-600 hover:text-coffee-primary"
-                }`}
-              >
-                {item.label}
-                {location === item.path && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-coffee-primary rounded-full" />
-                )}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              if (item.path === "/about") {
+                return (
+                  <button
+                    key={item.path}
+                    onClick={handleAboutClick}
+                    className={`font-medium transition-all duration-200 relative ${
+                      location === item.path || location === "/"
+                        ? "text-coffee-primary font-semibold"
+                        : "text-neutral-600 hover:text-coffee-primary"
+                    }`}
+                  >
+                    {item.label}
+                    {(location === item.path || location === "/") && (
+                      <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-coffee-primary rounded-full" />
+                    )}
+                  </button>
+                );
+              }
+              return (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className={`font-medium transition-all duration-200 relative ${
+                    location === item.path
+                      ? "text-coffee-primary font-semibold"
+                      : "text-neutral-600 hover:text-coffee-primary"
+                  }`}
+                >
+                  {item.label}
+                  {location === item.path && (
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-coffee-primary rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
           </div>
           
           {/* Mobile Menu Button */}
@@ -67,20 +103,37 @@ export default function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-6 pb-4 border-t border-neutral-200">
             <div className="flex flex-col space-y-4 pt-6">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className={`font-medium transition-all duration-200 px-3 py-2 rounded-lg ${
-                    location === item.path
-                      ? "text-coffee-primary bg-coffee-light font-semibold"
-                      : "text-neutral-600 hover:text-coffee-primary hover:bg-coffee-light/50"
-                  }`}
-                  onClick={closeMobileMenu}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                if (item.path === "/about") {
+                  return (
+                    <button
+                      key={item.path}
+                      onClick={handleAboutClick}
+                      className={`font-medium transition-all duration-200 px-3 py-2 rounded-lg text-left ${
+                        location === item.path || location === "/"
+                          ? "text-coffee-primary bg-coffee-light font-semibold"
+                          : "text-neutral-600 hover:text-coffee-primary hover:bg-coffee-light/50"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  );
+                }
+                return (
+                  <Link
+                    key={item.path}
+                    href={item.path}
+                    className={`font-medium transition-all duration-200 px-3 py-2 rounded-lg ${
+                      location === item.path
+                        ? "text-coffee-primary bg-coffee-light font-semibold"
+                        : "text-neutral-600 hover:text-coffee-primary hover:bg-coffee-light/50"
+                    }`}
+                    onClick={closeMobileMenu}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         )}
