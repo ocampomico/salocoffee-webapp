@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(47, 89%, 97%);
+  --foreground: hsl(20, 45%, 15%);
+  --muted: hsl(47, 30%, 93%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 45%, 15%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 45%, 15%);
+  --border: hsl(47, 30%, 85%);
+  --input: hsl(47, 30%, 85%);
+  --primary: hsl(25, 63%, 40%);
+  --primary-foreground: hsl(47, 89%, 97%);
+  --secondary: hsl(47, 30%, 93%);
+  --secondary-foreground: hsl(25, 25%, 20%);
+  --accent: hsl(28, 68%, 63%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(25, 63%, 40%);
+  --radius: 0.5rem;
+  
+  /* Coffee theme colors */
+  --coffee-brown: hsl(25, 63%, 40%);
+  --caramel: hsl(28, 68%, 63%);
+  --sandy-brown: hsl(39, 77%, 63%);
+  --cream: hsl(47, 89%, 89%);
+  --espresso: hsl(20, 45%, 15%);
+  --warm-white: hsl(47, 89%, 97%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(25, 63%, 40%);
+  --primary-foreground: hsl(47, 89%, 97%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(28, 68%, 63%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background: var(--warm-white);
+    color: var(--espresso);
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .coffee-brown {
+    color: var(--coffee-brown);
+  }
+  
+  .bg-coffee-brown {
+    background-color: var(--coffee-brown);
+  }
+  
+  .caramel {
+    color: var(--caramel);
+  }
+  
+  .bg-caramel {
+    background-color: var(--caramel);
+  }
+  
+  .sandy-brown {
+    color: var(--sandy-brown);
+  }
+  
+  .bg-sandy-brown {
+    background-color: var(--sandy-brown);
+  }
+  
+  .cream {
+    color: var(--cream);
+  }
+  
+  .bg-cream {
+    background-color: var(--cream);
+  }
+  
+  .espresso {
+    color: var(--espresso);
+  }
+  
+  .bg-espresso {
+    background-color: var(--espresso);
+  }
+  
+  .warm-white {
+    color: var(--warm-white);
+  }
+  
+  .bg-warm-white {
+    background-color: var(--warm-white);
+  }
+}
