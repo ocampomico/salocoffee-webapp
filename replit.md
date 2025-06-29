@@ -19,6 +19,7 @@ The application follows a modern full-stack architecture with clear separation b
 ### Backend Architecture
 - **Runtime**: Node.js with TypeScript
 - **Server Framework**: Express.js
+- **Package Manager**: Yarn (preferred over npm)
 - **Database ORM**: Drizzle ORM configured for PostgreSQL
 - **Database Provider**: Neon Database (serverless PostgreSQL)
 - **Session Management**: PostgreSQL session store with connect-pg-simple
@@ -101,16 +102,16 @@ shared/
 ## Deployment Strategy
 
 ### Development Environment
-- **Command**: `npm run dev`
+- **Command**: `yarn dev` (or `npm run dev`)
 - **Server**: Express server with Vite middleware for HMR
 - **Port**: 5000 (configured in .replit)
 - **Database**: PostgreSQL module available but not required for development
 
 ### Production Build
-- **Build Command**: `npm run build`
+- **Build Command**: `yarn build` (or `npm run build`)
   1. Vite builds the client-side React application
   2. esbuild bundles the server code for Node.js
-- **Start Command**: `npm run start`
+- **Start Command**: `yarn start` (or `npm run start`)
 - **Deployment Target**: Replit autoscale deployment
 - **Build Output**: 
   - Client assets → `dist/public/`
@@ -118,7 +119,7 @@ shared/
 
 ### Database Deployment
 - Drizzle migrations stored in `./migrations/`
-- Database push command: `npm run db:push`
+- Database push command: `yarn db:push` (or `npm run db:push`)
 - Environment variable required: `DATABASE_URL`
 
 ## Changelog
@@ -126,6 +127,7 @@ shared/
 Changelog:
 - June 23, 2025. Initial setup and basic coffee cart website with Home, About, Contact pages
 - June 23, 2025. Major design modernization update - implemented contemporary UI with improved typography, spacing, shadows, gradients, and modern color scheme
+- June 29, 2025. Migrated package management from npm to Yarn as requested by user
 
 ## Recent Changes
 
@@ -147,3 +149,5 @@ Changelog:
 
 Preferred communication style: Simple, everyday language.
 Design preference: Modern, contemporary styling with clean aesthetics
+Package manager preference: Yarn (instead of npm)
+Tech stack requirements: React + TypeScript + Yarn
