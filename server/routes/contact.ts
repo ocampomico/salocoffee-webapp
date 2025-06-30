@@ -9,7 +9,7 @@ router.post("/contact", async (req, res) => {
   try {
     await resend.emails.send({
       from: "Salo Coffee <info@salosalocoffee.com>",
-      to: "info@salosalocoffee.com",
+      to: "meaocampo@gmail.com",
       subject: `New message from ${name}`,
       replyTo: email,
       html: `<p><strong>Name:</strong> ${name}</p>
