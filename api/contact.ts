@@ -19,7 +19,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     await resend.emails.send({
       from: "Salo Coffee <info@salosalocoffee.com>",
-      to: "meaocampo@gmail.com",
+      to: "info@salosalocoffee.com",
       subject: `New Inquiry from ${name}`,
       replyTo: email,
       html: `
