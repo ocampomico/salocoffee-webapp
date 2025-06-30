@@ -19,12 +19,12 @@ export default function HeroSection() {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white leading-tight">
-            Premium Coffee
-            <span className="block text-white/90">on Wheels</span>
+            Salo Coffee
+            {/* <span className="block text-white/90">on Wheels</span> */}
           </h1>
-          <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-2xl mx-auto leading-relaxed">
+          {/* <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-2xl mx-auto leading-relaxed">
             Bringing artisanal coffee directly to you, wherever you are. Experience the perfect brew crafted with passion.
-          </p>
+          </p> */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
               onClick={handleOrderNow}

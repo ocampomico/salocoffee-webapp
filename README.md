@@ -23,7 +23,7 @@ A modern web application for a mobile coffee cart business built with React, Typ
 1. Clone the repository:
 ```bash
 git clone <your-repo-url>
-cd brew-and-go-coffee-cart
+cd salocoffee-webapp
 ```
 
 2. Install dependencies using Yarn:
@@ -36,7 +36,7 @@ yarn install
 yarn dev
 ```
 
-The application will be available at `http://localhost:5000`
+The application will be available at `http://localhost:3000`
 
 ## Available Scripts
 

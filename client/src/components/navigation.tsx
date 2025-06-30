@@ -96,23 +96,26 @@ export default function Navigation() {
               }
               if (item.path === "/") {
                 return (
-                  <Link
+                  <button
                     key={item.path}
-                    href={item.path}
+                    onClick={() => {
+                      if (location === "/" || location === "/about") {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      } else {
+                        window.location.href = "/";
+                      }
+                    }}
                     className={`font-medium transition-all duration-200 relative ${
                       activeSection === "home" && (location === "/" || location === "/about")
-                        ? "text-coffee-primary font-semibold"
-                        : location === item.path && activeSection !== "about"
                         ? "text-coffee-primary font-semibold"
                         : "text-neutral-600 hover:text-coffee-primary"
                     }`}
                   >
                     {item.label}
-                    {((activeSection === "home" && (location === "/" || location === "/about")) || 
-                      (location === item.path && activeSection !== "about")) && (
+                    {activeSection === "home" && (location === "/" || location === "/about") && (
                       <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-coffee-primary rounded-full" />
                     )}
-                  </Link>
+                  </button>
                 );
               }
               return (
@@ -167,20 +170,24 @@ export default function Navigation() {
                 }
                 if (item.path === "/") {
                   return (
-                    <Link
+                    <button
                       key={item.path}
-                      href={item.path}
-                      className={`font-medium transition-all duration-200 px-3 py-2 rounded-lg ${
+                      onClick={() => {
+                        if (location === "/" || location === "/about") {
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        } else {
+                          window.location.href = "/";
+                        }
+                        closeMobileMenu();
+                      }}
+                      className={`font-medium transition-all duration-200 px-3 py-2 rounded-lg text-left ${
                         activeSection === "home" && (location === "/" || location === "/about")
-                          ? "text-coffee-primary bg-coffee-light font-semibold"
-                          : location === item.path && activeSection !== "about"
                           ? "text-coffee-primary bg-coffee-light font-semibold"
                           : "text-neutral-600 hover:text-coffee-primary hover:bg-coffee-light/50"
                       }`}
-                      onClick={closeMobileMenu}
                     >
                       {item.label}
-                    </Link>
+                    </button>
                   );
                 }
                 return (
