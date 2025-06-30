@@ -18,9 +18,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     await resend.emails.send({
-      from: "Brew & Go Coffee <contact@yourdomain.com>", // You'll need to update this with your verified domain
+      from: "Salo Coffee <info@salosalocoffee.com>",
       to: "meaocampo@gmail.com",
-      subject: `New message from ${name}`,
+      subject: `New Inquiry from ${name}`,
       replyTo: email,
       html: `
         <h2>New Contact Form Message</h2>
