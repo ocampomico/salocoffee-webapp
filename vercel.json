@@ -3,7 +3,7 @@
   "outputDirectory": "dist/public",
   "functions": {
     "api/contact.ts": {
-      "runtime": "@vercel/node"
+      "runtime": "@vercel/node@5.3.0"
     }
   },
   "rewrites": [
