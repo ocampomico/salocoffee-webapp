@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Coffee, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import SaloLogo from "@/assets/salo-logo.png";
+import SaloLogo from "@/assets/salo-logo.svg";
 
 export default function HeroSection() {
   const [rotation, setRotation] = useState(0);
@@ -22,25 +22,18 @@ export default function HeroSection() {
   }, []);
 
   const handleOrderNow = () => {
-    window.open("tel:5551234273", "_self");
-  };
-
-  const handleFindUs = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
+    window.location.href = "/contact";
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center warm-gradient overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Organic Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-coffee-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-coffee-accent/5 rounded-full blur-3xl"></div>
       </div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10" style={{ paddingBottom: "20px" }}>
         <div className="text-center space-y-12">
           {/* Main Heading - Shio Style */}
           
@@ -70,22 +63,30 @@ export default function HeroSection() {
               BRINGING PREMIUM COFFEE TO YOUR COMMUNITY
             </p>
           </div>
+
+          <Button onClick={handleOrderNow}>
+            <span className="flex items-center justify-center space-x-2">
+              <Coffee className="h-5 w-5" />
+              <span>Book Now</span>
+            </span>
+          </Button>
         </div>
       </div>
 
-      <div className="absolute inset-0 pointer-events-none z-20">
+      <div className="absolute inset-0 pointer-events-none z-20 flex items-center justify-center">
         <svg
-          width="100%"
-          height="100%"
+          width="90%"
+          height="90%"
           viewBox="0 0 800 1000"
           preserveAspectRatio="none"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full"
+          className="w-[90%] h-[90%] mx-auto my-auto"
+          style={{ display: "block" }}
         >
           {/* Top Left */}
           <path
-            d="M0,120 Q60,60 120,0 M0,250 Q100,180 180,80"
+            d="M30,120 Q90,60 150,30 M30,250 Q130,180 210,80"
             stroke="#5e7136"
             strokeWidth="18"
             fill="none"
@@ -93,7 +94,7 @@ export default function HeroSection() {
           />
           {/* Top Right */}
           <path
-            d="M800,120 Q740,60 680,0 M800,250 Q700,180 620,80"
+            d="M770,120 Q710,60 650,30 M770,250 Q670,180 590,80"
             stroke="#5e7136"
             strokeWidth="18"
             fill="none"
@@ -101,7 +102,7 @@ export default function HeroSection() {
           />
           {/* Bottom Left */}
           <path
-            d="M0,880 Q60,940 120,1000 M0,750 Q100,820 180,920"
+            d="M30,880 Q90,940 150,970 M30,750 Q130,820 210,920"
             stroke="#5e7136"
             strokeWidth="18"
             fill="none"
@@ -109,22 +110,22 @@ export default function HeroSection() {
           />
           {/* Bottom Right */}
           <path
-            d="M800,880 Q740,940 680,1000 M800,750 Q700,820 620,920"
+            d="M770,880 Q710,940 650,970 M770,750 Q670,820 590,920"
             stroke="#5e7136"
             strokeWidth="18"
             fill="none"
             strokeLinecap="round"
           />
-          {/* Sides (optional, for more organic feel) */}
+          {/* Sides */}
           <path
-            d="M40,0 Q20,500 40,1000"
+            d="M70,30 Q50,500 70,970"
             stroke="#5e7136"
             strokeWidth="10"
             fill="none"
             strokeLinecap="round"
           />
           <path
-            d="M760,0 Q780,500 760,1000"
+            d="M730,30 Q750,500 730,970"
             stroke="#5e7136"
             strokeWidth="10"
             fill="none"

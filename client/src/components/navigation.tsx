@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Coffee, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import SaloLogo from "@/assets/salo-logo.png";
+import SaloLogo from "@/assets/salo-logo.svg";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -65,7 +65,7 @@ export default function Navigation() {
 
   return (
     <header className="bg-coffee-light/90 backdrop-blur-xl border-b border-coffee-secondary/30 sticky top-0 z-50">
-      <nav className="container mx-auto px-6 py-6">
+      <nav className="container mx-auto">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-4" onClick={closeMobileMenu}>
             <img src={SaloLogo} alt="Salo Logo" className="w-20 rounded-full" />

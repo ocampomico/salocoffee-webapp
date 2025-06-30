@@ -4,11 +4,11 @@ import SaloLogo from "@/assets/salo-logo.png";
 
 export default function Footer() {
   return (
-    <footer className="gradient-dark text-white py-16">
+    <footer className="gradient-dark text-white py-4">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12">
-          <div>
-            <div className="flex items-center space-x-3 mb-6">
+          <div className="flex">
+            <div className="flex items-center space-x-3">
               <img 
                 src={SaloLogo} 
                 alt="Salo Logo" 
@@ -20,18 +20,15 @@ export default function Footer() {
                 <div className="font-body text-xs uppercase tracking-wider">Coffee</div>
               </div>
             </div>
-            <p className="text-neutral-300 mb-6 leading-relaxed">
-              Premium mobile coffee experience bringing exceptional brews directly to you.
-            </p>
           </div>
 
-          <div />
+          <div className="hidden md:block"/>
 
-          <div>
-            <h4 className="font-semibold mb-6 text-lg">Contact Info</h4>
+          <div className="md:col-start-3 md:col-end-4 md:justify-self-end">
+            <h4 className="font-body font-semibold mb-2 text-xs uppercase tracking-wide">Contact Info</h4>
             <div className="space-y-3 text-neutral-300">
               <div className="flex items-center space-x-2">
-                <span className="font-medium">info@salosalocoffee.com</span>
+                <span className="font-body text-xs uppercase tracking-wide">info@salosalocoffee.com</span>
               </div>
               <div className="flex space-x-4">
                 <a
@@ -72,8 +69,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-12 pt-8 text-center text-neutral-300">
-          <p>&copy; 2024 Salo Coffee. All rights reserved.</p>
+        <div className="border-t border-white/20 mt-4 pt-4 text-center text-neutral-300">
+          <p>&copy; 2025 Salo Coffee. All rights reserved.</p>
         </div>
       </div>
     </footer>

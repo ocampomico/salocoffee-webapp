@@ -1,4 +1,9 @@
 import { Coffee, Heart, Award, Users } from "lucide-react";
+import SaloPour from "@/assets/salo-pour.gif";
+import SaloEvent1 from "@/assets/salo-event1.jpg";
+import SaloEvent2 from "@/assets/salo-event2.jpg";
+import SaloEvent3 from "@/assets/salo-event3.jpg";
+import PhotoReel from "@/components/phot-reel";
 
 export default function About() {
   return (
@@ -11,6 +16,7 @@ export default function About() {
               <h2 className="font-display section-title text-coffee-dark">
                 about us
               </h2>
+              <img src={SaloPour} alt="Loading..." className="w-64 h-64 object-cover rounded-xl shadow-lg" />
               <div className="w-16 h-px bg-coffee-primary"></div>
             </div>
             <p className="font-body text-lg md:text-xl text-coffee-brown organic-text">
@@ -27,6 +33,8 @@ export default function About() {
           </div>
         </div>
 
+        <PhotoReel />
+        
         {/* Values Section */}
         <div className="flowing-layout mt-24">
           <div className="text-center space-y-8">
@@ -34,7 +42,7 @@ export default function About() {
               Available for any and all events
             </h3>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
             <div className="text-center space-y-4 p-6">
               <div className="w-16 h-16 mx-auto rounded-full bg-coffee-primary/10 flex items-center justify-center">
@@ -43,7 +51,7 @@ export default function About() {
               <h4 className="font-display text-xl text-coffee-dark font-medium">Artisanal Coffee</h4>
               <p className="font-body text-coffee-brown organic-text text-sm">Premium beans expertly crafted for every occasion</p>
             </div>
-            
+
             <div className="text-center space-y-4 p-6">
               <div className="w-16 h-16 mx-auto rounded-full bg-coffee-primary/10 flex items-center justify-center">
                 <Heart className="w-8 h-8 text-coffee-primary" />
@@ -51,7 +59,7 @@ export default function About() {
               <h4 className="font-display text-xl text-coffee-dark font-medium">Community Love</h4>
               <p className="font-body text-coffee-brown organic-text text-sm">Supporting our community one cup at a time</p>
             </div>
-            
+
             <div className="text-center space-y-4 p-6">
               <div className="w-16 h-16 mx-auto rounded-full bg-coffee-primary/10 flex items-center justify-center">
                 <Award className="w-8 h-8 text-coffee-primary" />
@@ -59,7 +67,7 @@ export default function About() {
               <h4 className="font-display text-xl text-coffee-dark font-medium">Custom Recipes</h4>
               <p className="font-body text-coffee-brown organic-text text-sm">Tailored menu items for your specific event</p>
             </div>
-            
+
             <div className="text-center space-y-4 p-6">
               <div className="w-16 h-16 mx-auto rounded-full bg-coffee-primary/10 flex items-center justify-center">
                 <Users className="w-8 h-8 text-coffee-primary" />
