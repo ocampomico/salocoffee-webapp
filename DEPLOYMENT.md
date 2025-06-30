@@ -1,4 +1,4 @@
-# Deployment Guide - Brew & Go Coffee Cart
+# Deployment Guide - Salo Coffee
 
 This guide provides detailed steps to deploy your React + TypeScript + Yarn application to various hosting platforms with your custom domain.
 

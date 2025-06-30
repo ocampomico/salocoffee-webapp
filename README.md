@@ -1,4 +1,4 @@
-# Brew & Go Coffee Cart
+# Salo Coffee
 
 A modern web application for a mobile coffee cart business built with React, TypeScript, and Yarn.
 

@@ -1,35 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(222.2, 84%, 4.9%);
-  --muted: hsl(210, 40%, 98%);
-  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(222.2, 84%, 4.9%);
+  --background: hsl(45, 29%, 97%);
+  --foreground: hsl(30, 25%, 15%);
+  --muted: hsl(45, 20%, 94%);
+  --muted-foreground: hsl(30, 15%, 45%);
+  --popover: hsl(45, 29%, 97%);
+  --popover-foreground: hsl(30, 25%, 15%);
   --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(222.2, 84%, 4.9%);
-  --border: hsl(214.3, 31.8%, 91.4%);
-  --input: hsl(214.3, 31.8%, 91.4%);
-  --primary: hsl(27, 87%, 67%);
-  --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(210, 40%, 96%);
-  --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
-  --accent: hsl(210, 40%, 96%);
+  --card-foreground: hsl(30, 25%, 15%);
+  --border: hsl(45, 20%, 90%);
+  --input: hsl(45, 20%, 90%);
+  --primary: hsl(25, 70%, 50%);
+  --primary-foreground: hsl(45, 29%, 97%);
+  --secondary: hsl(45, 15%, 92%);
+  --secondary-foreground: hsl(30, 25%, 15%);
+  --accent: hsl(35, 40%, 85%);
   --accent-foreground: hsl(222.2, 47.4%, 11.2%);
   --destructive: hsl(0, 84.2%, 60.2%);
   --destructive-foreground: hsl(210, 40%, 98%);
   --ring: hsl(27, 87%, 67%);
   --radius: 0.75rem;
   
-  /* Modern coffee theme colors */
-  --coffee-primary: hsl(27, 87%, 67%);
-  --coffee-secondary: hsl(35, 91%, 65%);
-  --coffee-dark: hsl(25, 47%, 35%);
-  --coffee-light: hsl(35, 77%, 92%);
-  --coffee-accent: hsl(20, 79%, 88%);
+  /* Shio-inspired warm earth tones */
+  --coffee-primary: #5e7136;
+  --coffee-secondary: hsl(35, 25%, 80%);
+  --coffee-dark: #5e7136;
+  --coffee-light: hsl(45, 40%, 96%);
+  --coffee-accent: hsl(20, 60%, 45%);
+  --coffee-cream: hsl(40, 35%, 92%);
+  --coffee-brown: #5e7136;
+  --coffee-warm: hsl(35, 50%, 88%);
   --neutral-50: hsl(210, 40%, 98%);
   --neutral-100: hsl(210, 40%, 96%);
   --neutral-200: hsl(214.3, 31.8%, 91.4%);
@@ -151,5 +157,71 @@
 
   .shadow-modern-xl {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Shio-inspired styles */
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .organic-spacing {
+    padding-top: clamp(3rem, 8vw, 8rem);
+    padding-bottom: clamp(3rem, 8vw, 8rem);
+  }
+  
+  .organic-text {
+    line-height: 1.7;
+    letter-spacing: 0.025em;
+  }
+  
+  .warm-gradient {
+    background: linear-gradient(135deg, var(--coffee-light), var(--coffee-cream));
+  }
+  
+  .earth-gradient {
+    background: linear-gradient(135deg, var(--coffee-brown), var(--coffee-primary));
+  }
+  
+  .text-shadow-soft {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .rounded-organic {
+    border-radius: clamp(1rem, 2.5vw, 2.5rem);
+  }
+  
+  .hero-text {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 1.1;
+    font-weight: 700;
+  }
+  
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  
+  .flowing-layout {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  
+  .asymmetric-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  
+  @media (max-width: 768px) {
+    .asymmetric-grid {
+      grid-template-columns: 1fr;
+    }
   }
 }

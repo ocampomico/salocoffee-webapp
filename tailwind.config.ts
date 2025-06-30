@@ -5,6 +5,10 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        'display': ['Playfair Display', 'serif'],
+        'body': ['Inter', 'sans-serif'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -60,6 +64,17 @@ export default {
           "accent-foreground": "var(--sidebar-accent-foreground)",
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
+        },
+        // Shio-inspired coffee colors
+        coffee: {
+          primary: "var(--coffee-primary)",
+          secondary: "var(--coffee-secondary)",
+          dark: "var(--coffee-dark)",
+          light: "var(--coffee-light)",
+          accent: "var(--coffee-accent)",
+          cream: "var(--coffee-cream)",
+          brown: "var(--coffee-brown)",
+          warm: "var(--coffee-warm)",
         },
       },
       keyframes: {

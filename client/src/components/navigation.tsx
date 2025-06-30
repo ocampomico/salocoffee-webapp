@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Coffee, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SaloLogo from "@/assets/salo-logo.png";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -63,33 +64,34 @@ export default function Navigation() {
   };
 
   return (
-    <header className="bg-white/80 backdrop-blur-xl border-b border-neutral-200 sticky top-0 z-50 shadow-modern">
-      <nav className="container mx-auto px-6 py-4">
+    <header className="bg-coffee-light/90 backdrop-blur-xl border-b border-coffee-secondary/30 sticky top-0 z-50">
+      <nav className="container mx-auto px-6 py-6">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center space-x-3" onClick={closeMobileMenu}>
-            <div className="bg-coffee-primary p-2 rounded-xl shadow-modern">
-              <Coffee className="text-white text-xl" />
+          <Link href="/" className="flex items-center space-x-4" onClick={closeMobileMenu}>
+            <img src={SaloLogo} alt="Salo Logo" className="w-20 rounded-full" />
+            <div className="space-y-1">
+              <div className="font-body text-xs text-coffee-brown uppercase tracking-wider">Salo</div>
+              <div className="font-body text-xs text-coffee-brown uppercase tracking-wider">Coffee</div>
             </div>
-            <span className="text-2xl font-bold text-gradient">Brew & Go</span>
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-12">
             {navItems.map((item) => {
               if (item.path === "/about") {
                 return (
                   <button
                     key={item.path}
                     onClick={handleAboutClick}
-                    className={`font-medium transition-all duration-200 relative ${
+                    className={`font-body text-base font-medium transition-all duration-300 relative ${
                       activeSection === "about"
-                        ? "text-coffee-primary font-semibold"
-                        : "text-neutral-600 hover:text-coffee-primary"
+                        ? "text-coffee-primary"
+                        : "text-coffee-brown hover:text-coffee-primary"
                     }`}
                   >
                     {item.label}
                     {activeSection === "about" && (
-                      <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-coffee-primary rounded-full" />
+                      <div className="absolute -bottom-2 left-0 right-0 h-px bg-coffee-primary" />
                     )}
                   </button>
                 );
@@ -105,15 +107,15 @@ export default function Navigation() {
                         window.location.href = "/";
                       }
                     }}
-                    className={`font-medium transition-all duration-200 relative ${
+                    className={`font-body text-base font-medium transition-all duration-300 relative ${
                       activeSection === "home" && (location === "/" || location === "/about")
-                        ? "text-coffee-primary font-semibold"
-                        : "text-neutral-600 hover:text-coffee-primary"
+                        ? "text-coffee-primary"
+                        : "text-coffee-brown hover:text-coffee-primary"
                     }`}
                   >
                     {item.label}
                     {activeSection === "home" && (location === "/" || location === "/about") && (
-                      <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-coffee-primary rounded-full" />
+                      <div className="absolute -bottom-2 left-0 right-0 h-px bg-coffee-primary" />
                     )}
                   </button>
                 );
@@ -122,15 +124,15 @@ export default function Navigation() {
                 <Link
                   key={item.path}
                   href={item.path}
-                  className={`font-medium transition-all duration-200 relative ${
+                  className={`font-body text-base font-medium transition-all duration-300 relative ${
                     location === item.path
-                      ? "text-coffee-primary font-semibold"
-                      : "text-neutral-600 hover:text-coffee-primary"
+                      ? "text-coffee-primary"
+                      : "text-coffee-brown hover:text-coffee-primary"
                   }`}
                 >
                   {item.label}
                   {location === item.path && (
-                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-coffee-primary rounded-full" />
+                    <div className="absolute -bottom-2 left-0 right-0 h-px bg-coffee-primary" />
                   )}
                 </Link>
               );
