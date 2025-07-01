@@ -4,12 +4,13 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import SaloEvent1 from "@/assets/salo-event1.jpg";
 import SaloEvent2 from "@/assets/salo-event2.jpg";
 import SaloEvent3 from "@/assets/salo-event3.jpg";
-
+import SaloEvent4 from "@/assets/salo-event4.jpg";
 
 const carouselImages = [
 	SaloEvent1,
 	SaloEvent2,
 	SaloEvent3,
+	SaloEvent4,
 ];
 
 export default function PhotoReel() {

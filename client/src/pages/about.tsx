@@ -3,7 +3,7 @@ import SaloPour from "@/assets/salo-pour.gif";
 import SaloEvent1 from "@/assets/salo-event1.jpg";
 import SaloEvent2 from "@/assets/salo-event2.jpg";
 import SaloEvent3 from "@/assets/salo-event3.jpg";
-import PhotoReel from "@/components/phot-reel";
+import PhotoReel from "@/components/photo-reel";
 
 export default function About() {
   return (
@@ -16,16 +16,16 @@ export default function About() {
               <h2 className="font-display section-title text-coffee-dark">
                 about us
               </h2>
-              <img src={SaloPour} alt="Loading..." className="w-64 h-64 object-cover rounded-xl shadow-lg" />
+              <img src={SaloPour} alt="Loading..." className="w-auto h-auto object-cover rounded-xl shadow-lg" />
               <div className="w-16 h-px bg-coffee-primary"></div>
             </div>
-            <p className="font-body text-lg md:text-xl text-coffee-brown organic-text">
-              BORN FROM A PASSION FOR COMMUNITY, we offer coffee cart services around our area as well as the greater region
+            <p className="font-body text-coffee-brown organic-text">
+              Filipino-owned coffee company with a mission to spread the warmth of community and hospitality through every cup.
             </p>
           </div>
           <div className="space-y-6">
             <p className="font-body text-base md:text-lg text-coffee-brown organic-text">
-              Salo Coffee is our opportunity to make people feel welcomed through delicious coffee and genuine connections. Whether it's a wedding, corporate event, book signing, or any big life moments, we're ready to make it extra delicious.
+              <em> Salo Coffee </em> is our opportunity to make people feel welcomed through delicious coffee and genuine connections. Whether it's a wedding, corporate event, book signing, or any big life moments, we're ready to make it extra delicious.
             </p>
             <p className="font-body text-base md:text-lg text-coffee-brown organic-text">
               We work hard to create both custom menu items for specific events and familiar favorites for everyday drinking. Every cup is crafted with care, bringing the warmth of community to your gathering.
